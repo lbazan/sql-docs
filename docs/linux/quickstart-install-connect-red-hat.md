@@ -64,8 +64,8 @@ For other system requirements, see [System requirements for SQL Server on Linux]
 > ```
 > sudo alternatives --config python
 > # If not configured, install python2 and openssl10 using the following commands: 
-> sudo yum install python2
-> sudo yum install compat-openssl10
+> sudo dnf install python2
+> sudo dnf install compat-openssl10
 > # Configure python2 as the default interpreter using this command: 
 > sudo alternatives --config python
 > ```
@@ -91,7 +91,7 @@ To configure SQL Server on RHEL, run the following commands in a terminal to ins
 2. Run the following commands to install SQL Server:
 
    ```bash
-   sudo yum install -y mssql-server
+   sudo dnf install -y mssql-server
    ```
 
 3. After the package installation finishes, run **mssql-conf setup** and follow the prompts to set the SA password and choose your edition.
@@ -133,8 +133,8 @@ At this point, SQL Server is running on your RHEL machine and is ready to use!
 > ```
 > sudo alternatives --config python
 > # If not configured, install python2 and openssl10 using the following commands: 
-> sudo yum install python2
-> sudo yum install compat-openssl10
+> sudo dnf install python2
+> sudo dnf install compat-openssl10
 > # Configure python2 as the default interpreter using this command: 
 > sudo alternatives --config python
 > ``` 
@@ -153,7 +153,7 @@ To configure SQL Server on RHEL, run the following commands in a terminal to ins
 2. Run the following commands to install SQL Server:
 
    ```bash
-   sudo yum install -y mssql-server
+   sudo dnf install -y mssql-server
    ```
 
 3. After the package installation finishes, run **mssql-conf setup** and follow the prompts to set the SA password and choose your edition.
@@ -195,13 +195,13 @@ To create a database, you need to connect with a tool that can run Transact-SQL 
 1. If you had a previous version of **mssql-tools** installed, remove any older unixODBC packages.
 
    ```bash
-   sudo yum remove unixODBC-utf16 unixODBC-utf16-devel
+   sudo dnf remove unixODBC-utf16 unixODBC-utf16-devel
    ```
 
 1. Run the following commands to install **mssql-tools** with the unixODBC developer package. For more information, see [Install the Microsoft ODBC driver for SQL Server (Linux)](../connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server.md).
 
    ```bash
-   sudo yum install -y mssql-tools unixODBC-devel
+   sudo dnf install -y mssql-tools unixODBC-devel
    ```
 
 1. For convenience, add `/opt/mssql-tools/bin/` to your **PATH** environment variable. This enables you to run the tools without specifying the full path. Run the following commands to modify the **PATH** for both login sessions and interactive/non-login sessions:
